@@ -20,9 +20,6 @@ point(7, 2, 0). point(8, 2, 1). point(9, 2, 2).
 :- not island(9, 2, 2).
 
 #show island/3.
-% {island((N), 0..(n-1), 0..(n-1))} = 1 :- N = 1..p.
-% % a point X, Y cannot have more than one island.
-% :- island(N1, X, Y), island(N2, X, Y), N1 != N2.
 
 % Let us additionally assume that bridges can only be connected between adjacent islands (non-diagonal).
 
@@ -34,10 +31,12 @@ point(7, 2, 0). point(8, 2, 1). point(9, 2, 2).
 
 #show bridge/2.
 
+% An island X is reachable if there is a bridge between island X and a reachable island Y
 reachable(X) :- bridge(X, Y), reachable(Y).
+% the start is always reachable
 reachable(1).
 
-% % we must be able to reach the end
+% we must be able to reach the end
 :-not reachable(9).
 
 #show reachable/1.

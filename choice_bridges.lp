@@ -23,7 +23,9 @@ island(7, 2, 0). island(8, 2, 1). island(9, 2, 2).
 
 % Let (0, 0) be the starting point and (2, 2) be the end point.
 
+% An island X is reachable if there is a bridge between island X and a reachable island Y
 reachable(X) :- bridge(X, Y), reachable(Y).
+% the start is always reachable
 reachable(1).
 
 % we must be able to reach the end
