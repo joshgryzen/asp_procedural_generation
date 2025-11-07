@@ -5,11 +5,24 @@
 %     (2, 0), (2, 1), (2, 2)
 % ]
 
-% For now, lets assume there is an island at each point
+point(1, 0, 0). point(2, 0, 1). point(3, 0, 2). 
+point(4, 1, 0). point(5, 1, 1). point(6, 1, 2). 
+point(7, 2, 0). point(8, 2, 1). point(9, 2, 2). 
+
+#const p = 5.
+
+% Let us now randomly pick p points to have an island
 % island(N, X, Y) is island number N at point X, Y.
-island(1, 0, 0). island(2, 0, 1). island(3, 0, 2). 
-island(4, 1, 0). island(5, 1, 1). island(6, 1, 2). 
-island(7, 2, 0). island(8, 2, 1). island(9, 2, 2). 
+{island(N, X, Y) : point(N, X, Y)} = p.
+% Let island (0, 0) be the starting point and island (2,2) be the end point.
+% ensure we have our start and end islands:
+:- not island(1, 0, 0).
+:- not island(9, 2, 2).
+
+#show island/3.
+% {island((N), 0..(n-1), 0..(n-1))} = 1 :- N = 1..p.
+% % a point X, Y cannot have more than one island.
+% :- island(N1, X, Y), island(N2, X, Y), N1 != N2.
 
 % Let us additionally assume that bridges can only be connected between adjacent islands (non-diagonal).
 
@@ -21,18 +34,10 @@ island(7, 2, 0). island(8, 2, 1). island(9, 2, 2).
 
 #show bridge/2.
 
-% Let (0, 0) be the starting point and (2, 2) be the end point.
-
-% An island X is reachable if there is a bridge between island X and a reachable island Y
 reachable(X) :- bridge(X, Y), reachable(Y).
-% the start is always reachable
 reachable(1).
 
-% we must be able to reach the end
+% % we must be able to reach the end
 :-not reachable(9).
 
-% we can additionally minimize the number of bridges:
-#minimize{1, (N, M) : bridge(M, N)}.
-
-% Can use --opt-mode=OptN to show all minimal models
 #show reachable/1.

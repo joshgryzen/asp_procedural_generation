@@ -5,9 +5,6 @@
 %     (2, 0), (2, 1), (2, 2)
 % ]
 
-% Consider a 3x3 grid. 
-#const n = 3.
-
 % For now, lets assume there is an island at each point
 % island(N, X, Y) is island number N at point X, Y.
 island(1, 0, 0). island(2, 0, 1). island(3, 0, 2). 
