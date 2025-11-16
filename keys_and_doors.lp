@@ -1,10 +1,10 @@
-#const n = 2.
+#const number_of_doors = 2.
 
 % Choose to spawn key X island N
-{spawn_key(X, N) : island(N, _, _)} = 1 :- X = 1..n.
+{spawn_key(X, N) : island(N, _, _)} = 1 :- X = 1..number_of_doors.
 
 % Choose to spawn door X on island N
-{spawn_door(X, N) : island(N, _, _)} = 1 :- X = 1..n.
+{spawn_door(X, N) : island(N, _, _)} = 1 :- X = 1..number_of_doors.
 
 % ensure the distance to the key is less than the distance to the door
 % it cannot be that the distance to the key is greater than or equal to the distance to the door.

@@ -14,4 +14,4 @@ score(N, S) :- island(N, _, _), S = #sum{X, E, N : spawn(X, E, N)}.
 :- island(N, _, _), score(N, S), distance(N, D), S != (D*10).
 
 #show spawn/3.
-#show score/2.
+% #show score/2.

@@ -19,7 +19,7 @@ island(7, 2, 0). island(8, 2, 1). island(9, 2, 2).
 % choose to add a bridge between islands above and below:
 {bridge(N, M) : island(N, X1, Y1), island(M, X2, Y2), Y1 = Y2, X1 = X2 + 1}.
 
-% #show bridge/2.
+#show bridge/2.
 
 % Let (0, 0) be the starting point and (2, 2) be the end point.
 

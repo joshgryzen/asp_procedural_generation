@@ -3,19 +3,21 @@ Given parameters, geerate valid world - randomly 1 of room connections...
 modularity - look at island scale/ big world scale, zoom in...
 
 specifc things common across games:
-- one island labeled boss island
-- the boss island cannot be reachable within 2 or 3 steps (progression/distance)
-- label every island with shortest distance from the beginning and the end
-- distance from the beginning is associated with difficulty
+- one island labeled boss island - DONE
+- the boss island cannot be reachable within 2 or 3 steps (progression/distance) - DONE
+- label every island with shortest distance from the beginning and the end - DONE
+- distance from the beginning is associated with difficulty - DONE
 - keys and doors:
-   - blue key somehwere reachable from 1, but not behind the blue door 
-- bunch of level 1, 2,.. rooms assigned to each of the islands based on distance
--define a formula, where a goblin is 1 difficulty point, mummy is 2 difficulty points, skeleton is 1.5 difficulty 
+   - blue key somehwere reachable from 1, but not behind the blue door - DONE
+- bunch of level 1, 2,.. rooms assigned to each of the islands based on distance - DONE
+-define a formula, where a goblin is 1 difficulty point, mummy is 2 difficulty points, skeleton is 1.5 difficulty - DONE
     - (assign to each island a random combination of enemies where the sum of their difficulty is less than or equal to the distance from the start)
     - distance 1 can have 1 goblin
     - distance 2 island can have 2 gobs, 1 mummy
     - distance 3...
 
-start island is distance 0 - peace!
+start island is distance 0 - peace! - DONE
 
-tell where bridges are, what enemies are assigned, where the key and door are
+tell where bridges are, what enemies are assigned, where the key and door are - DONE
+
+TODO: Verify that the encodings are correct. Add test cases!
