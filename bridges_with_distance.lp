@@ -1,24 +1,4 @@
-% #include "boss.lp".
-
-% grid:
-% [ 
-%     (0, 0), (0, 1), (0, 2),
-%     (1, 0), (1, 1), (1, 2),
-%     (2, 0), (2, 1), (2, 2)
-% ]
-
-% For now, lets assume there is an island at each point
-% island(N, X, Y) is island number N at point X, Y.
-#const island_num = 3.
-
-point(0..island_num, 0..island_num).
-{island(N, X, Y) : point(X, Y)} :- N = 1..island_num*island_num.
-
-island(1, 0, 0). island(2, 0, 1). island(3, 0, 2). 
-island(4, 1, 0). island(5, 1, 1). island(6, 1, 2). 
-island(7, 2, 0). island(8, 2, 1). island(9, 2, 2). 
-
-% Let us additionally assume that bridges can only be connected between adjacent islands (non-diagonal).
+% Let us assume that bridges can only be connected between adjacent islands (non-diagonal).
 
 % choose to add a bridge between islands to the left and right:
 {bridge(N, M) : island(N, X1, Y1), island(M, X2, Y2), X1 = X2, Y1 = Y2 + 1}.
@@ -48,9 +28,5 @@ distance(N, D+1) :- bridge(N, M), distance(M, D).
 % we must be able to reach the end
 :-not reachable(9).
 
-% we can additionally minimize the number of bridges:
-% #minimize{1, (N, M) : bridge(M, N)}.
-
-% Can use --opt-mode=OptN to show all minimal models
 % #show reachable/1.
 #show distance/2.
