@@ -27,6 +27,3 @@ distance(N, D+1) :- bridge(N, M), distance(M, D).
 
 % we must be able to reach the end
 :-not reachable(9).
-
-% #show reachable/1.
-#show distance/2.
