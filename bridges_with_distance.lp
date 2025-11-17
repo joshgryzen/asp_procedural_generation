@@ -9,6 +9,11 @@
 
 % For now, lets assume there is an island at each point
 % island(N, X, Y) is island number N at point X, Y.
+#const island_num = 3.
+
+point(0..island_num, 0..island_num).
+{island(N, X, Y) : point(X, Y)} :- N = 1..island_num*island_num.
+
 island(1, 0, 0). island(2, 0, 1). island(3, 0, 2). 
 island(4, 1, 0). island(5, 1, 1). island(6, 1, 2). 
 island(7, 2, 0). island(8, 2, 1). island(9, 2, 2). 
@@ -35,6 +40,7 @@ reachable(1).
 distance(1, 0).
 
 % bridges will always be such that N > M.
+% check if there are multiple distances?
 distance(N, D+1) :- bridge(N, M), distance(M, D).
 
 % #show distance/2.
@@ -47,3 +53,4 @@ distance(N, D+1) :- bridge(N, M), distance(M, D).
 
 % Can use --opt-mode=OptN to show all minimal models
 % #show reachable/1.
+#show distance/2.

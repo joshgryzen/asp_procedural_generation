@@ -21,3 +21,8 @@ start island is distance 0 - peace! - DONE
 tell where bridges are, what enemies are assigned, where the key and door are - DONE
 
 TODO: Verify that the encodings are correct. Add test cases!
+
+11/17 notes:
+
+can we dynamically  set the number of  islands?
+compare to previous literature. 
