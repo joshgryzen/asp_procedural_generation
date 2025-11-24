@@ -1,4 +1,4 @@
-#const island_num = 20.
+#const island_num = 2.
 
 % Example 3x3 grid and island numbering:
 
@@ -69,6 +69,6 @@ all_distances(Y, D+1) :- edge(X, Y), all_distances(X, D), D <= (island_num + 1) 
 
 % inspect islands that have no distance?
 % Find minimal distance
-distance(X, M) :- reachable(X), M = #min{D : all_distances(X, D)}, #count{D : all_distances(X, D)} >= 1.
+distance(X, M) :- reachable(X), M = #min{D : all_distances(X, D)}.
 
 #show distance/2.

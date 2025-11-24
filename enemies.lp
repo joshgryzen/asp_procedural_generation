@@ -10,8 +10,8 @@ enemy(skeleton, 15).
 0 {spawn((S * F), E, N) : F = 1..D} 1 :- reachable(N), distance(N, D), enemy(E, S). 
 
 % Ensure that the total score of enemies is equal to the distance
-score(N, S) :- distance(N, D), S = #sum{X, E, N : spawn(X, E, N)}, S <= (D*10).
-% :- reachable(N), score(N, S), distance(N, D), S != (D*10). % inspect this error: enemies.lp:14:53-54: info: number expected (got #sup)
+score(N, S) :- distance(N, D), S = #sum{X, E, N : spawn(X, E, N)}.
+:- reachable(N), score(N, S), distance(N, D), S != (D*10). % inspect this error: enemies.lp:14:53-54: info: number expected (got #sup)
 
 #show spawn/3.
 #show score/2.
