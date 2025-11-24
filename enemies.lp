@@ -7,11 +7,11 @@ enemy(skeleton, 15).
 
 % Spawn X points worth of enemy E on island N
 % Consider the example, distance = 3.  We can have 1 mummy and 1 goblin, 3 goblins, 2 skeletons.
-0 {spawn((S * F), E, N) : F = 1..D} 1 :- island(N, _, _), distance(N, D), enemy(E, S). 
+0 {spawn((S * F), E, N) : F = 1..D} 1 :- reachable(N), distance(N, D), enemy(E, S). 
 
 % Ensure that the total score of enemies is equal to the distance
-score(N, S) :- island(N, _, _), S = #sum{X, E, N : spawn(X, E, N)}.
-:- island(N, _, _), score(N, S), distance(N, D), S != (D*10).
+score(N, S) :- distance(N, D), S = #sum{X, E, N : spawn(X, E, N)}, S <= (D*10).
+% :- reachable(N), score(N, S), distance(N, D), S != (D*10). % inspect this error: enemies.lp:14:53-54: info: number expected (got #sup)
 
 #show spawn/3.
-% #show score/2.
+#show score/2.
