@@ -26,3 +26,10 @@ TODO: Verify that the encodings are correct. Add test cases!
 
 can we dynamically  set the number of  islands?
 compare to previous literature. 
+
+11/24 notes:
+
+write a simple program that visualizes the map
+keep reading - nail down what is/needs to be done
+
+also invistigate bugs (enemies / distances) (maybe visualization will help)
