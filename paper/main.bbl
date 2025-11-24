@@ -1,0 +1,109 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{SmithM11_Maze}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=1,uniquepart=given,hash=4583dcb4e8a01076f4883b6c03635381}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Adam\bibnamedelima M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=6860903aff3a9110600b92e8c1fb82c1}{%
+           family={Mateas},
+           familyi={M\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a5ca14a02af4528c213ff480eb485492}
+      \strng{fullhash}{a5ca14a02af4528c213ff480eb485492}
+      \strng{fullhashraw}{a5ca14a02af4528c213ff480eb485492}
+      \strng{bibnamehash}{a5ca14a02af4528c213ff480eb485492}
+      \strng{authorbibnamehash}{a5ca14a02af4528c213ff480eb485492}
+      \strng{authornamehash}{a5ca14a02af4528c213ff480eb485492}
+      \strng{authorfullhash}{a5ca14a02af4528c213ff480eb485492}
+      \strng{authorfullhashraw}{a5ca14a02af4528c213ff480eb485492}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{{IEEE} Trans. Comput. Intell. {AI} Games}
+      \field{number}{3}
+      \field{title}{Answer Set Programming for Procedural Content Generation: {A} Design Space Approach}
+      \field{volume}{3}
+      \field{year}{2011}
+      \field{pages}{187\bibrangedash 200}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1109/TCIAIG.2011.2158545
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1109/TCIAIG.2011.2158545
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1109/TCIAIG.2011.2158545
+      \endverb
+    \endentry
+    \entry{Smith2014ALA_Dungeons}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{un=1,uniquepart=given,hash=7f0815453da9fedcab7ed8ca2abd9536}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Anthony\bibnamedelima J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=a7521dd374d12145d6057517263c662d}{%
+           family={Bryson},
+           familyi={B\bibinitperiod},
+           given={Joanna\bibnamedelima J.},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f5d27539cbe650108584a5abf4f073b4}
+      \strng{fullhash}{f5d27539cbe650108584a5abf4f073b4}
+      \strng{fullhashraw}{f5d27539cbe650108584a5abf4f073b4}
+      \strng{bibnamehash}{f5d27539cbe650108584a5abf4f073b4}
+      \strng{authorbibnamehash}{f5d27539cbe650108584a5abf4f073b4}
+      \strng{authornamehash}{f5d27539cbe650108584a5abf4f073b4}
+      \strng{authorfullhash}{f5d27539cbe650108584a5abf4f073b4}
+      \strng{authorfullhashraw}{f5d27539cbe650108584a5abf4f073b4}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A Logical Approach to Building Dungeons : Answer Set Programming for Hierarchical Procedural Content Generation in Roguelike Games}
+      \field{year}{2014}
+      \verb{urlraw}
+      \verb https://api.semanticscholar.org/CorpusID:12629969
+      \endverb
+      \verb{url}
+      \verb https://api.semanticscholar.org/CorpusID:12629969
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -17,12 +17,28 @@ reachable(X) :- bridge(Y, X), reachable(Y).
 % the distance to the first island is always 0
 forward_distance(1, 0).
 
+% forward_distance(1) := 0.
+
 % calculate the minimum distance from the start assuming a straight line
 forward_distance(X, M+1) :- bridge(X,Y), M = #min{D : forward_distance(Y, D)}.
+
+
+
+
+
+
+
+
+
 
 % calculate the minimum distance from the start allowing backtracking
 % this will catch the islands such that N > M where N never occurs in forward distsance
 reverse_distance(X, M+1) :- bridge(Y, X), M = #min{D : forward_distance(Y, D)}.
+
+
+
+
+
 
 % if there is only one forward or reverse distance, it is optimal
 distance(X, D1) :- forward_distance(X, D1), not reverse_distance(X, _).
