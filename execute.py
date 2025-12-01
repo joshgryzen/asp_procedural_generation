@@ -20,7 +20,7 @@ def run_clingo(size, doors, enemies, boss, min):
     # Load files
     control.load("islands_and_bridges_with_distance.lp")
 
-    if doors > 0:
+    if doors:
         control.load("keys_and_doors.lp")
     if enemies:
         control.load("enemies.lp")
@@ -29,7 +29,7 @@ def run_clingo(size, doors, enemies, boss, min):
     if min:
         control.load("minimize.lp")
 
-    print(f"min: {min}")
+    # print(f"min: {min}")
 
     # Ground the program
     control.ground()
@@ -40,8 +40,8 @@ def run_clingo(size, doors, enemies, boss, min):
     def on_model(model):
         shown_symbols = model.symbols(shown=True)
         print("New model (potentially better):")
-        for sym in shown_symbols:
-            print(str(sym))
+        # for sym in shown_symbols:
+        #     print(str(sym))
         # Overwrite with the current (better) model
         model_atoms.clear()
         model_atoms.extend(shown_symbols)
@@ -63,12 +63,14 @@ def parse_atoms(symbols):
 
     for sym in symbols:
         if sym.name == "island" and len(sym.arguments) == 3:
+            # island(ID, X, Y)
             i = sym.arguments[0].number
             x = sym.arguments[1].number
             y = sym.arguments[2].number
             islands[i] = (x, y)
 
         elif sym.name == "bridge" and len(sym.arguments) == 2:
+            # bridge(N1, N2), where N1 and N2 are islands
             a = sym.arguments[0].number
             b = sym.arguments[1].number
             bridges.append((a, b))
@@ -77,8 +79,9 @@ def parse_atoms(symbols):
             # spawn(Value, EnemyType, IslandID)
             enemy_type = str(sym.arguments[1])
             island_id = sym.arguments[2].number
+            value = int((sym.arguments[0].number) / 10)
 
-            enemies.setdefault(island_id, []).append(enemy_type)
+            enemies.setdefault(island_id, []).append((enemy_type, value))
 
     return islands, bridges, enemies
 

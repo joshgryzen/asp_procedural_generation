@@ -1,17 +1,17 @@
-#const island_num = 2.
+#const island_num = 1.
 
 % Example 3x3 grid and island numbering:
 
 % grid:
 % [ 
-%     (0, 0), (0, 1), (0, 2),
-%     (1, 0), (1, 1), (1, 2),
-%     (2, 0), (2, 1), (2, 2)
+%     (0, 0), (1, 0), (2, 0),
+%     (0, 1), (1, 1), (2, 1),
+%     (0, 2), (1, 2), (2, 2)
 % ]
 
-% island(1, 0, 0). island(2, 0, 1). island(3, 0, 2). 
-% island(4, 1, 0). island(5, 1, 1). island(6, 1, 2). 
-% island(7, 2, 0). island(8, 2, 1). island(9, 2, 2). 
+% island(1, 0, 0). island(4, 1, 0). island(7, 2, 0). 
+% island(2, 0, 1). island(5, 1, 1). island(8, 2, 1). 
+% island(3, 0, 2). island(6, 1, 2). island(9, 2, 2). 
 
 % =================================== Generate Islands ===================================
 
@@ -21,10 +21,10 @@ point(0..island_num, 0..island_num).
 % instantiate the first island.
 island(1, 0, 0).
 
-% Moving in X column increases the N by the length of the row
+% Moving in X row increases the N by the length of the row
 island(N + island_num + 1, X + 1, Y) :- island(N, X, Y), point(X + 1, Y).
 
-% Moving in the Y row increases the N by 1
+% Moving in the Y column increases the N by 1
 island(N + 1, X, Y + 1) :- island(N, X, Y), point(X, Y + 1).
 
 % Instantiate 1 variable island for ease of reading
@@ -36,10 +36,10 @@ island(N) :- island(N, _, _).
 
 % Let us assume that bridges can only be connected between adjacent islands (non-diagonal).
 
-% choose to add a bridge between islands to the left and right:
+% choose to add a bridge between islands up and down:
 {bridge(N, M) : island(N, X1, Y1), island(M, X2, Y2), X1 = X2, Y1 = Y2 + 1}.
 
-% choose to add a bridge between islands above and below:
+% choose to add a bridge between islands right and left:
 {bridge(N, M) : island(N, X1, Y1), island(M, X2, Y2), Y1 = Y2, X1 = X2 + 1}.
 
 % the first island is always reachable
