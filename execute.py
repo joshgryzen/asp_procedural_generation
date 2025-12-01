@@ -6,6 +6,7 @@ import multiprocessing
 import random
 import colorsys
 
+# little function to assign color hue to integer id from chatgpt
 def id_to_color(n):
         """
         Convert numeric ID into a stable unique-ish color.
@@ -184,9 +185,8 @@ def draw_map(islands, bridges, enemies, keys, doors, boss_island):
             canvas.create_text(ex, ey - 10, text=enemy, fill="black", font=("Arial", 8))
 
             angle += angle_step
-        # -----------------------
+
     # Draw Keys (colored squares)
-    # -----------------------
     KEY_OFFSET = 45
     KEY_SIZE = 10
 
@@ -218,10 +218,7 @@ def draw_map(islands, bridges, enemies, keys, doors, boss_island):
 
             angle += angle_step
 
-
-    # -----------------------
     # Draw Doors (same color as matching key)
-    # -----------------------
     DOOR_OFFSET = 60
     DOOR_W = 14
     DOOR_H = 18
