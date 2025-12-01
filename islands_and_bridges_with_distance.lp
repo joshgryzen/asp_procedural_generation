@@ -30,6 +30,8 @@ island(N + 1, X, Y + 1) :- island(N, X, Y), point(X, Y + 1).
 % Instantiate 1 variable island for ease of reading
 island(N) :- island(N, _, _).
 
+#show island/3.
+
 % =================================== Generate Bridges ===================================
 
 % Let us assume that bridges can only be connected between adjacent islands (non-diagonal).
@@ -51,7 +53,7 @@ reachable(X) :- bridge(Y, X), reachable(Y).
 #show reachable/1.
 
 % we must be able to reach the end
-:-not reachable(9).
+:-not reachable((island_num + 1) * (island_num + 1)).
 
 #show bridge/2.
 
